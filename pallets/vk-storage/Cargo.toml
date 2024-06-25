@@ -1,27 +1,27 @@
 [package]
 name = "pallet-vk-storage"
 version = "0.1.0"
-authors = ["Cardinal", "Aleph Zero Foundation"]
-edition = "2021"
-homepage = "https://alephzero.org"
-repository = "https://github.com/Cardinal-Cryptography/aleph-node"
-license = "Apache 2.0"
+authors.workspace = true
+edition.workspace = true
+homepage.workspace = true
+repository.workspace = true
+license.workspace = true
 
 [dependencies]
-log = { version = "0.4", default-features = false }
-parity-scale-codec = { version = "3.6", default-features = false, features = ["derive"] }
-scale-info = { version = "2.11", default-features = false, features = ["derive"] }
+log = { workspace = true }
+parity-scale-codec = { workspace = true, features = ["derive"] }
+scale-info = { workspace = true, features = ["derive"] }
 
-frame-benchmarking = { git = "https://github.com/Cardinal-Cryptography/polkadot-sdk.git", branch = "aleph-v1.6.0", default-features = false, optional = true }
-frame-support = { git = "https://github.com/Cardinal-Cryptography/polkadot-sdk.git", branch = "aleph-v1.6.0", default-features = false }
-frame-system = { git = "https://github.com/Cardinal-Cryptography/polkadot-sdk.git", branch = "aleph-v1.6.0", default-features = false }
-sp-core = { git = "https://github.com/Cardinal-Cryptography/polkadot-sdk.git", branch = "aleph-v1.6.0", default-features = false }
-sp-std = { git = "https://github.com/Cardinal-Cryptography/polkadot-sdk.git", branch = "aleph-v1.6.0", default-features = false }
+frame-benchmarking = { workspace = true, optional = true }
+frame-support = { workspace = true }
+frame-system = { workspace = true }
+sp-core = { workspace = true }
+sp-std = { workspace = true }
 
 [dev-dependencies]
-pallet-balances = { git = "https://github.com/Cardinal-Cryptography/polkadot-sdk.git", branch = "aleph-v1.6.0", default-features = false }
-sp-io = { git = "https://github.com/Cardinal-Cryptography/polkadot-sdk.git", branch = "aleph-v1.6.0", default-features = false }
-sp-runtime = { git = "https://github.com/Cardinal-Cryptography/polkadot-sdk.git", branch = "aleph-v1.6.0", default-features = false }
+pallet-balances = { workspace = true }
+sp-io = { workspace = true }
+sp-runtime = { workspace = true }
 
 [features]
 default = ["std"]

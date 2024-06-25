@@ -1,0 +1,54 @@
+[workspace]
+resolver = "2"
+
+members = [
+    "baby-liminal-extension",
+    "pallets/feature-control",
+    "pallets/vk-storage",
+    "runtime-interfaces",
+]
+
+[profile.release]
+panic = "unwind"
+
+[profile.production]
+inherits = "release"
+lto = true
+codegen-units = 1
+
+[workspace.package]
+authors = ["Cardinal", "Aleph Zero Foundation"]
+edition = "2021"
+homepage = "https://alephzero.org"
+license = "Apache-2.0"
+repository = "https://github.com/Cardinal-Cryptography/baby-liminal"
+
+[workspace.dependencies]
+getrandom = { version = "0.2.15", features = ["js"] }
+ink = { version = "5.0.0-rc", default-features = false }
+log = { version = "0.4", default-features = false }
+parity-scale-codec = { version = "3.6", default-features = false }
+paste = { version = "1.0" }
+rand = { version = "0.8.5", default-features = false }
+scale-info = { version = "2.11", default-features = false }
+serde = { version = "1.0", default-features = false }
+
+aleph-runtime = { git = "https://github.com/Cardinal-Cryptography/aleph-node", rev = "246fd3f475b09a72f574f6c0934367209bd6dec6" } # at the repository splitting moment
+halo2_proofs = { git = "https://github.com/Cardinal-Cryptography/pse-halo2", branch = "aleph", default-features = false }
+
+frame-support = { git = "https://github.com/Cardinal-Cryptography/polkadot-sdk.git", branch = "aleph-v1.6.0", default-features = false }
+frame-system = { git = "https://github.com/Cardinal-Cryptography/polkadot-sdk.git", branch = "aleph-v1.6.0", default-features = false }
+pallet-balances = { git = "https://github.com/Cardinal-Cryptography/polkadot-sdk.git", branch = "aleph-v1.6.0", default-features = false }
+pallet-contracts = { git = "https://github.com/Cardinal-Cryptography/polkadot-sdk.git", branch = "aleph-v1.6.0", default-features = false }
+sp-core = { git = "https://github.com/Cardinal-Cryptography/polkadot-sdk.git", branch = "aleph-v1.6.0", default-features = false }
+sp-std = { git = "https://github.com/Cardinal-Cryptography/polkadot-sdk.git", branch = "aleph-v1.6.0", default-features = false }
+frame-benchmarking = { git = "https://github.com/Cardinal-Cryptography/polkadot-sdk.git", branch = "aleph-v1.6.0", default-features = false }
+sp-runtime = { git = "https://github.com/Cardinal-Cryptography/polkadot-sdk.git", branch = "aleph-v1.6.0", default-features = false }
+sp-runtime-interface = { git = "https://github.com/Cardinal-Cryptography/polkadot-sdk.git", branch = "aleph-v1.6.0", default-features = false }
+sp-io = { git = "https://github.com/Cardinal-Cryptography/polkadot-sdk.git", branch = "aleph-v1.6.0", default-features = false }
+
+# Local crates
+
+aleph-runtime-interfaces = { path = "runtime-interfaces", default-features = false }
+pallet-feature-control = { path = "pallets/feature-control", default-features = false }
+pallet-vk-storage = { path = "pallets/vk-storage", default-features = false }
